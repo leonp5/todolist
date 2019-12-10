@@ -1,16 +1,16 @@
 import React from "react";
-import styled from "@emotion/styled";
-import ToDoList from "./components/ToDoList";
+import { ThemeProvider } from "emotion-theming";
 
-const Container = styled.div`
-  display: flex;
-`;
+import ToDoList from "./components/ToDoList";
+import GlobalStyles from "./components/GlobalStyles";
+import { theme } from "./utils/themes";
 
 function App() {
   return (
-    <Container>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
       <ToDoList />
-    </Container>
+    </ThemeProvider>
   );
 }
 
